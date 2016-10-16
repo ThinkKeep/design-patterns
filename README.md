@@ -10,4 +10,4 @@
 
 # 在线阅读
 
-[](https://www.gitbook.com/book/jasonim/design-patterns/details)
+![](https://www.gitbook.com/book/jasonim/design-patterns/details)
