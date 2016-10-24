@@ -3,4 +3,5 @@
 
 
 与组合关系不同的是，整体和部分不是强依赖的，即使整体不存在了，部分仍然存在；例如， 班级撤销了，人员不会消失，他们依然存在；
-![](https://github.com/jasonim/design-patterns/blob/master/image/aggregation.svg)
+
+![](https://rawgit.com/jasonim/design-patterns/master/image/aggregation.svg)

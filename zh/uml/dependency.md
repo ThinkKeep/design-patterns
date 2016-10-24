@@ -3,4 +3,4 @@
 
 依赖关系是用一套带箭头的虚线表示的；
 
-![](https://github.com/jasonim/design-patterns/blob/master/image/dependency.svg)
+![](https://rawgit.com/jasonim/design-patterns/master/image/dependency.svg)
