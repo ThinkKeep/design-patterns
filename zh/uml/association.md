@@ -4,6 +4,6 @@
 比如，乘车人和车票之间就是一种关联关系；学生和学校就是一种关联关系；
 
 关联关系默认不强调方向，表示对象间相互知道；如果特别强调方向，如下图，表示A知道B，但 B不知道A；
-
+![](https://github.com/jasonim/design-patterns/blob/master/image/association.svg)
 
 在最终代码中，关联对象通常是以成员变量的形式实现的
