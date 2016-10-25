@@ -7,6 +7,7 @@
   - [组合关系](uml/composition.md)
   - [关联关系](uml/association.md)
   - [依赖关系](uml/dependency.md)
+* [设计模式原则](uml/design-principle.md)
 * [创建型模式](uml/creator-mode.md)
   - [简单工厂模式](uml/simple-factory.md)
   - [工厂方法模式](uml/factory-method.md)
