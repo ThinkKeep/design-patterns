@@ -12,3 +12,14 @@
 # 在线阅读
 
 https://www.gitbook.com/book/jasonim/design-patterns/details
+
+# 贡献者
+[@JasonThink](https://github.com/jasonim)
+
+###License
+![](https://i.creativecommons.org/l/by-nc/4.0/88x31.png)
+
+版权采用[CC Attribution-NonCommercial](http://creativecommons.org/licenses/by-nc/4.0/) 
+中文：[署名-非商业性使用协议](http://creativecommons.org/licenses/by-nc/3.0/cn/).
+
+© 2016 [JasonThink](https://github.com/jasonim) rights reserved.
