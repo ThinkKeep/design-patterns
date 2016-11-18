@@ -17,4 +17,7 @@
     * [建造者模式](uml/builder.md)
     * [原型模式](uml/prototype.md)
     * [单例模式](uml/singleton.md)
+ * [结构型模式](uml/structural.md)
+   * [静态代理模式](uml/proxy-static.md)
+ * [行为型模式](uml/behavioral.md)
 
