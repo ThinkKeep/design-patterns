@@ -11,7 +11,10 @@
 
 # 在线阅读
 
-https://www.gitbook.com/book/jasonim/design-patterns/details
+[正式版本](http://hujiandong.com/design-patterns/zh/)
+
+[预览版本](https://www.gitbook.com/book/jasonim/design-patterns/details)
+
 
 # 贡献者
 **为了保证本书的质量， 本书采用协作开发摸索进行开发，特别感谢如下贡献者,没有他们的贡献， 这本书就不可能完成。**
