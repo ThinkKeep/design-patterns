@@ -3,4 +3,4 @@
 
 但组合关系是一种强依赖的特殊聚合关系，如果整体不存在了，则部分也不存在了；例如， 公司不存在了，部门也将不存在了；整体的生命周期结束也就意味着部分的生命周期结束；比如你和你的大脑；表现在代码层面，和关联关系是一致的，只能从语义级别来区分；
 
-![](https://rawgit.com/jasonim/design-patterns/master/image/contains.svg)
+![](https://rawgit.com/ThinkKeep/design-patterns/master/zh/uml/image/contains.svg)
