@@ -1,0 +1,43 @@
+@startuml
+
+abstract Protocol {
+    performRequest()
+}
+
+class TCPProtocol
+class HTTPProtocol
+Class UDPProtocol
+
+
+
+abstract class ProtocolFactory {
+    createProtocol(): Protocol
+}
+
+class TCPFactory {
+    createProtocol(): TCPProtocol
+}
+
+note top of UDPFactory: return new UDPProtocol();
+class UDPFactory {
+    createProtocol(): UDPProtocol
+}
+
+class HTTPFactory {
+    createProtocol(): HTTPProtocol
+}
+
+Protocol  <|-- TCPProtocol
+Protocol  <|-- HTTPProtocol
+Protocol  <|-- UDPProtocol
+
+ProtocolFactory <|-- TCPFactory
+ProtocolFactory <|-- UDPFactory
+ProtocolFactory <|-- HTTPFactory
+
+TCPProtocol .. TCPFactory:create
+HTTPProtocol .. HTTPFactory: create
+UDPProtocol .. UDPFactory: create
+
+
+@enduml
