@@ -11,7 +11,7 @@
 
 # 在线阅读
 
-[正式版本](http://hujiandong.com/design-patterns/zh/)
+[正式版本](https://thinkkeep.github.io/design-patterns/zh/)
 
 [预览版本](https://www.gitbook.com/book/jasonim/design-patterns/details)
 
