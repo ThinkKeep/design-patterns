@@ -5,9 +5,9 @@
 
 # 目录结构
 本书使用 GitBook 编写， 更多学习请参考 GitBook 官网。
-+ zh：整个书中文文字。
-+ code：书中所有模式实现的示例代码。
-+ image：书中的引用的图片。
++ zh：整个书中文文字及每种模式。
++ XX/code：书中XX模式实现的示例代码， 如简单工厂模式代码位置在 simple-factory/code 里。
++ XX/image：书中XX模式的引用的图片， 如简单工厂模式图片位置在 simple-factory/image 里。
 
 # 在线阅读
 

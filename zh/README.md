@@ -2,6 +2,7 @@
 本书使用图形和代码结合的方式来解析设计模式；让你装13， 让你飞。
 
 **为了保证本书的质量， 本书采用协作开发摸索进行开发，特别感谢如下贡献者,没有他们的贡献， 这本书就不可能完成。**
+
 [@JasonThink](https://github.com/jasonim)
 
 [@shixinzhang](https://github.com/shixinzhang)
