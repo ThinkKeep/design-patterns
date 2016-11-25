@@ -7,7 +7,7 @@
 我们经常要去汉堡店买汉堡， 现在都有自助点餐，当我选择汉堡的时候， 就会出现不同种类的汉堡提供我们选择， 我们选择麦辣鸡腿堡时，确认订单、支付订单、打印订单都就可以，在旁边等待叫号取汉堡就行了。这个时候我们可以把自助点餐机看作是生产汉堡的简单工厂，他负责给我们生产汉堡。
 
 ## 类图
-![](https://rawgit.com/jasonim/design-patterns/master/image/simple-factory.svg)
+![](https://rawgit.com/ThinkKeep/design-patterns/master/zh/creator-mode/simple-factory/image/simple-factory.svg)
 
 ## 关键代码
 ```java
