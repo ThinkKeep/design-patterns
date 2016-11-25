@@ -4,7 +4,7 @@
 工厂方法模式(Factory Method Pattern)又称为工厂模式，也叫虚拟构造器(Virtual Constructor)模式或者多态工厂(Polymorphic Factory)模式，它属于类创建型模式。在工厂方法模式中，工厂父类负责定义创建产品对象的公共接口，而工厂子类则负责生成具体的产品对象，这样做的目的是将产品类的实例化操作延迟到工厂子类中完成，即通过工厂子类来确定究竟应该实例化哪一个具体产品类。
 ## 类图
 
-![]()
+![](https://rawgit.com/jasonim/design-patterns/develop/zh/creator-mode/factory-method/image/factory-method.svg)
 
 代码：
 ```java
@@ -26,10 +26,11 @@ public static void main(String[] args) {
 
 }
 ``
+
 上面的代码， 分别通过不同的协议工厂创建不过协议类， 方便客户端调用。这样客服端不需要关系哪种具体产品类将被实例化这一细节，也不许知道具体的类的类名， 当再有更多协议更方便扩展，也遵循「对扩展开放，对修改关闭」的原则。如果细心的同学可能会发现， 三段代码有相同的地方， 是的， 可以进一步重构， 想这样`createFactory(int protocol)`，这里为了更方便大家看懂工厂方法，就分开来写了。
 
 运行结果：
-![]()
+![](https://rawgit.com/jasonim/design-patterns/develop/zh/creator-mode/factory-method/image/factory-method-run.png)
 
 **优点**：
 + 在工厂方法模式中，工厂方法用来创建客户所需要的产品，同时还向客户隐藏了哪种具体产品类将被实例化这一细节，用户只需要关心所需产品对应的工厂，无须关心创建细节，甚至无须知道具体产品类的类名。
