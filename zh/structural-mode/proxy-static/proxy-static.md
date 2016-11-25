@@ -24,7 +24,7 @@
 
 ##类图
 
-![](https://rawgit.com/shixinzhang/design-patterns/e2dc4377ae14e76068789be299cd897091f2bf8d/image/static-proxy.png)
+![](https://rawgit.com/ThinkKeep/design-patterns/master/zh/structural-mode/proxy-static/image/static-proxy.png)
 
 在图中，代理与被代理实现同一个接口，即拥有共同的行为，同时代理中持有一个被代理的引用。这样当不想直接访问某个对象时，可以通过代理来间接访问。
 
