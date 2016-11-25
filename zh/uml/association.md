@@ -5,6 +5,6 @@
 
 关联关系默认不强调方向，表示对象间相互知道；如果特别强调方向，如下图，表示A知道B，但 B不知道A；
 
-![](https://rawgit.com/jasonim/design-patterns/master/image/association.svg)
+![](https://rawgit.com/ThinkKeep/design-patterns/master/zh/uml/image/association.svg)
 
 在最终代码中，关联对象通常是以成员变量的形式实现的
