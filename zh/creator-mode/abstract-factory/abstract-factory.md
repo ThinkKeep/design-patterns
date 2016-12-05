@@ -16,7 +16,28 @@ Provide an interface for creating families of related or dependent objects witho
 
 
 **代码**：
+**AbsFactory**
+```java
+public interface AbsFactory {
+    Hamburg createhamburg();
+    Drink createDrink();
+    //套餐....
+}
+```
+**Store**
+```java
+public class Store {
+    public static void main(String[] args) {
+        AbsFactory factory = new ChineseFactory();
+        factory.createDrink();
+        factory.createhamburg();
 
+        factory = new NYFactory();
+        factory.createDrink();
+        factory.createhamburg();
+    }
+}
+```
 
 **运行结果**：
 
