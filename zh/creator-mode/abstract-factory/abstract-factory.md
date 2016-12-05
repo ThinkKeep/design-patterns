@@ -17,6 +17,7 @@ Provide an interface for creating families of related or dependent objects witho
 ![](https://rawgit.com/jasonim/design-patterns/develop/zh/creator-mode/abstract-factory/image/abstract-factory.svg)
 
 **代码**：
+
 **AbsFactory**
 ```java
 public interface AbsFactory {
