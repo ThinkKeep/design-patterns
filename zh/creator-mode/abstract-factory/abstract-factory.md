@@ -14,6 +14,7 @@ Provide an interface for creating families of related or dependent objects witho
 
 **类图**：
 
+![](https://rawgit.com/jasonim/design-patterns/develop/zh/creator-mode/abstract-factory/image/abstract-factory.svg)
 
 **代码**：
 **AbsFactory**
@@ -41,6 +42,7 @@ public class Store {
 
 **运行结果**：
 
+![](https://rawgit.com/jasonim/design-patterns/develop/zh/creator-mode/abstract-factory/image/run.png)
 
 **优点**：
 + 封装性，每个产品的实现类不是高层模块要关系的，要关心的是什么？是接口，是抽象，它不关心对象是如何创建出来，这由谁负责呢？工厂类。
