@@ -87,17 +87,18 @@ public class Agent implements IMovieStar {
 }
 ```
 
-最后进行单元测试：
+最后进行测试：
 
 ```java
-	@Test
-    public void testMovieShow() throws Exception {
+public class AgentTest {
+    public static void main(String[] args){
         Star huangBo = new Star("HuangBo");
         Agent agent = new Agent(huangBo);
-        // 网上查到，2016年黄渤的片酬达到了 3000W ，这得敲多少年代码额呜呜
+        // 网上查到，2016年黄渤的片酬达到了 3000W ，我得敲多少年代码额呜呜
         agent.movieShow(1000000000);
         agent.tvShow(5);
     }
+}
  
 ```
 
@@ -197,18 +198,22 @@ public class ProxyHandler implements InvocationHandler {
 
 **注意！** 在 `ProxyHandler` 中我们创建了` getProxy()` 方法，这个方法用于调用 `Proxy.newProxyInstance(...)` 方法生成代理类。
 
-单元测试：
+测试一下：
 
 ```java
-@Test
-    public void testInvoke() throws Exception {
+public class MyInvocationHandlerTest {
+    public static void main(String[] args){
         Star huangBo = new Star("HuangBo");
         ProxyHandler proxyHandler = new ProxyHandler(huangBo);
         IMovieStar agent = (IMovieStar) proxyHandler.getProxy();
         agent.movieShow(1000000000);
         agent.tvShow(100);
 
+        //黄渤早年其实是个歌手！唱歌不得志只好去演戏，成为影帝后人们才关注他的歌声，真是个“看脸、看名”的世界
+        ISingerStar singerAgent = (ISingerStar) proxyHandler.getProxy();
+        singerAgent.sing(1024);
     }
+}
 ```
 
 运行结果：
@@ -284,6 +289,9 @@ public class Star implements IMovieStar, ISingerStar {
 而动态代理模式，做到了**”一个经纪人代理 N 个明星“**，大大减少类的创建、修改成本。此外动态代理还符合 `AOP` (面向切面编程) 思想，在很多场合都有使用。
 
 ###缺点
+
+可以看到，动态代理是在运行时通过反射获取拦截对象的方法，如果有大量的动态代理发生，不可避免地对性能有些影响。
+
 本文所讨论的动态代理实现方式是使用 `JDK` 提供的 `Proxy` 类，这个类**只支持对接口实现类的代理**，这在有些场景下会有约束。
 
 针对这种情况，有人创建了 `CGLIB` (Code Generation Library) 开源项目，它补充了JDK 动态代理仅支持接口实现类的不足：
