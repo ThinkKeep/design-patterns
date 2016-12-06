@@ -104,7 +104,7 @@ public class AgentTest {
 
 运行结果：
 
-![](https://rawgit.com/ThinkKeep/design-patterns/master/zh/structural-mode/proxy-dynamic/image/static-proxy-result1.png)
+![](https://rawgit.com/ThinkKeep/design-patterns/develop/zh/structural-mode/proxy-dynamic/image/dynamic-proxy-result1.png)
 
 
 可以看到，被代理类 Star 只需要完成自己的功能，不用因为业务逻辑而频繁修改代码，取而代之的是用 Agent 来做中间人，由它来代替 Star 完成一些业务操作。
@@ -126,7 +126,7 @@ public class AgentTest {
 
 ##动态代理 UML 图如下
 
-![](https://rawgit.com/ThinkKeep/design-patterns/master/zh/structural-mode/proxy-dynamic/image/dynamic-proxy.png)
+![](https://rawgit.com/ThinkKeep/design-patterns/develop/zh/structural-mode/proxy-dynamic/image/dynamic-proxy.png)
 
 JDK 为我们提供了 `Proxy` 类来实现动态代理，其中最重要的方法是 `newProxyInstance()`：
 
@@ -218,7 +218,7 @@ public class MyInvocationHandlerTest {
 
 运行结果：
 
-![](https://rawgit.com/ThinkKeep/design-patterns/master/zh/structural-mode/proxy-dynamic/image/static-proxy-result1.png)
+![](https://rawgit.com/ThinkKeep/design-patterns/develop/zh/structural-mode/proxy-dynamic/image/dynamic-proxy-result1.png)
 
 
 可以看到，使用时只需要传入明星即可，以后即使这个 `IMovieStar` 接口修改，也不会影响到经纪人。
@@ -278,7 +278,7 @@ public class Star implements IMovieStar, ISingerStar {
 
 运行结果：
 
-![](https://rawgit.com/ThinkKeep/design-patterns/master/zh/structural-mode/proxy-dynamic/image/static-proxy-result2.png)
+![](https://rawgit.com/ThinkKeep/design-patterns/develop/zh/structural-mode/proxy-dynamic/image/dynamic-proxy-result2.png)
 
 
 ## 特点
