@@ -1,13 +1,13 @@
 # 抽象工厂模式
 在工厂方法模式中具体工厂负责生产具体的产品，每一个具体工厂对应一种具体产品，工厂方法也具有唯一性，一般情况下，一个具体工厂中只有一个工厂方法或者一组重载的工厂方法。我们可以想一下，有时候我们需要一个工厂可以提供多个产品对象，而不是单一的产品对象，即产品族。如在工厂方法中 HTTPFactory 只负责生产 HTTPProtocol 等。显然不能满足我们的需求了， 怎么办？ 抽象工厂模式给我们解决了这个问题。
 
-为了让你能够刚好的理解抽象工厂模式， 我们先了解一下几个概率：
+为了让你能够更好的理解抽象工厂模式， 我们先了解以下几个概率：
 + **产品等级结构** ：产品等级结构即产品的继承结构，如一个抽象类是 Protocol，其子类有 HTTPProtocol、TCPProtocol、UDPProtocol，则抽象 Protocol与具体协议之间构成了一个产品等级结构，抽象Protocol是父类，而具体协议的 Procotol 是其子类。
 + **产品族**：在抽象工厂模式中，产品族是指由同一个工厂生产的，位于不同产品等级结构中的一组产品，如中国麦当劳店生产的巨无霸、可乐， 巨无霸位于汉堡产品等级结构中，可乐位于饮料产品等级结构中。
 
 
 ## 定义
-Provide an interface for creating families of related or dependent objects without specifying their concrete classes。为创建一组相关或相互依赖的对象提供一个接口，而且无需指定它们的具体类。
+>Provide an interface for creating families of related or dependent objects without specifying their concrete classes。为创建一组相关或相互依赖的对象提供一个接口，而且无需指定它们的具体类。
 
 ## 实例 
 大家都去麦当劳吃过汉堡吧， 还有中国的麦当劳产品和国外的麦当劳，不一样吧， 至少原料不一样吧， 鸡肉都是本地产的吧，还有汉堡的大小不一样吧。套餐的品种也不样吧， 下面我们就用麦当劳举例吧。
