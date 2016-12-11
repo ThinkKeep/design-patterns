@@ -114,7 +114,10 @@ public class WebViewChromiumFactoryProvider implements WebViewFactoryProvider {
     ...
 }
 ```
-WebViewFactoryProvider是抽象工厂接口，定义了WebView及周边功能所需要对象的创建方法，这些方法大部分为工厂方法，它们返回的对象类型是抽象的，属于面向接口的编程风格。抽象工厂WebViewFactoryProvider创建的对象有：实现Webview核心功能的WebViewProvider，管理Cookie的CookieManager，地理位置相关的GeolocationPermissions和存储Web表单数据的WebviewDatabase等等。WebViewChromiumFactoryProvider是抽象工厂的具体实现者，它提供“Chromium”主题的产品族，也是目前最新版本Webview正在使用的产品族。如果将来有新的浏览器引擎内核出现(以前用得是 Apple Webkit 内核， 听说 google 搞了一套自己的，不知道现在加进去没)，那么只需按照WebViewFactoryProvider接口创建该主题下产品，然后替换现有的「Chromium」就可以完成换代，不用改动其他地方任何代码。
+WebViewFactoryProvider 是抽象工厂接口，定义了 WebView 及周边功能所需要对象的创建方法，这些方法大部分为工厂方法，它们返回的对象类型是抽象的，属于面向接口的编程风格。抽象工厂 WebViewFactoryProvider 创建的对象有：
+实现Webview核心功能的 WebViewProvider ，管理 Cookie 的 CookieManager，地理位置相关的 GeolocationPermissions 和存储 Web 表单数据的WebviewDatabase 等等。
+
+WebViewChromiumFactoryProvider 是抽象工厂的具体实现者，它提供「Chromium」主题的产品族，也是目前最新版本 Webview 正在使用的产品族。如果将来有新的浏览器引擎内核出现(以前用得是 Apple Webkit 内核， 听说 google 搞了一套自己的，不知道现在加进去没)，那么只需按照 WebViewFactoryProvider 接口创建该主题下产品，然后替换现有的「Chromium」就可以完成换代，不用改动其他地方任何代码。
 
 
 
