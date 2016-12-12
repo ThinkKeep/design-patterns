@@ -19,5 +19,6 @@
     * [单例模式](creator-mode/singleton/singleton.md)
 * [结构型模式](structural-mode/structural.md)
     * [静态代理模式](structural-mode/proxy-static/proxy-static.md)
+    * [动态代理模式](structural-mode/proxy-dynamic/proxy-dynamic.md)
 * [行为型模式](behavioral-mode/behavioral.md)
 
