@@ -6,12 +6,12 @@
 >单例模式，又称单件模式或者单子模式，指的是一个类只有一个实例，并且提供一个全局访问点。
 
 ## 实现思路
-+ 在单例的类中设置一个 private 静态变量instance，instance 类型为当前类，用来持有单例唯一的实例。
+在单例的类中设置一个 private 静态变量instance，instance 类型为当前类，用来持有单例唯一的实例。
 将（无参数）构造器设置为 private，避免外部使用 new 构造多个实例。
 提供一个 public 的静态方法，如 getInstance，用来返回该类的唯一实例 instance。
 
 ## 类图
-![](jjj)
+![](https://rawgit.com/jasonim/design-patterns/develop/zh/creator-mode/singleton/image/singleton.png)
 
 ## 几种实现方式
 由于使用场景不同，出现不同写法和模式，它们分别:
@@ -161,7 +161,7 @@ class SnackbarManager {
         return sSnackbarManager;
     }
 }
-``
+```
 
 
 懒汉式线程安全实现方式:
