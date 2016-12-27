@@ -1,0 +1,511 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>继承 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="realize.html" />
+    
+    
+    <link rel="prev" href="introduct.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduct.html">
+            
+                <a href="introduct.html">
+            
+                    
+                    UML中类的关系
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="inherit.html">
+            
+                <a href="inherit.html">
+            
+                    
+                    继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="realize.html">
+            
+                <a href="realize.html">
+            
+                    
+                    实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="aggregation.html">
+            
+                <a href="aggregation.html">
+            
+                    
+                    聚合关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="composition.html">
+            
+                <a href="composition.html">
+            
+                    
+                    组合关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="association.html">
+            
+                <a href="association.html">
+            
+                    
+                    关联关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="dependency.html">
+            
+                <a href="dependency.html">
+            
+                    
+                    依赖关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="design-principle.html">
+            
+                <a href="design-principle.html">
+            
+                    
+                    设计模式原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../creator-mode/creator-mode.html">
+            
+                <a href="../creator-mode/creator-mode.html">
+            
+                    
+                    创建型模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../creator-mode/simple-factory/simple-factory.html">
+            
+                <a href="../creator-mode/simple-factory/simple-factory.html">
+            
+                    
+                    简单工厂模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../creator-mode/factory-method/factory-method.html">
+            
+                <a href="../creator-mode/factory-method/factory-method.html">
+            
+                    
+                    工厂方法模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../creator-mode/abstract-factory/abstract-factory.html">
+            
+                <a href="../creator-mode/abstract-factory/abstract-factory.html">
+            
+                    
+                    抽象工厂模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../creator-mode/factory-diff.html">
+            
+                <a href="../creator-mode/factory-diff.html">
+            
+                    
+                    三种工厂模式比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../creator-mode/builder/builder.html">
+            
+                <a href="../creator-mode/builder/builder.html">
+            
+                    
+                    建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../creator-mode/prototype/prototype.html">
+            
+                <a href="../creator-mode/prototype/prototype.html">
+            
+                    
+                    原型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../creator-mode/singleton/singleton.html">
+            
+                <a href="../creator-mode/singleton/singleton.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../structural-mode/structural.html">
+            
+                <a href="../structural-mode/structural.html">
+            
+                    
+                    结构型模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../structural-mode/proxy-static/proxy-static.html">
+            
+                <a href="../structural-mode/proxy-static/proxy-static.html">
+            
+                    
+                    静态代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../structural-mode/proxy-dynamic/proxy-dynamic.html">
+            
+                <a href="../structural-mode/proxy-dynamic/proxy-dynamic.html">
+            
+                    
+                    动态代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../behavioral-mode/behavioral.html">
+            
+                <a href="../behavioral-mode/behavioral.html">
+            
+                    
+                    行为型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >继承</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7EE7;&#x627F;">&#x7EE7;&#x627F;</h1>
+<p>&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#x4E3A; is-a&#x7684;&#x5173;&#x7CFB;&#xFF1B;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x7528; is-a &#x6765;&#x8868;&#x793A;&#xFF0C;&#x5C31;&#x662F;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#xFF1A;&#xFF08;..&#x662F;..)
+&#x7EE7;&#x627F;&#x662F;&#x7C7B;&#x4E0E;&#x7C7B;&#x6216;&#x8005;&#x63A5;&#x53E3;&#x4E0E;&#x63A5;&#x53E3;&#x4E4B;&#x95F4;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x5173;&#x7CFB;&#xFF1B;&#x5982;&#xFF1A;&#x4EBA;&#x7EE7;&#x627F;&#x4E8E;&#x733F;&#x4EBA;&#x3001;&#x5B69;&#x5B50;&#x7EE7;&#x627F;&#x4E8E;&#x7236;&#x4EB2;&#x7B49;&#x3002;</p>
+<p><img src="https://rawgit.com/ThinkKeep/design-patterns/master/zh/uml/image/extends.svg" alt=""></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="introduct.html" class="navigation navigation-prev " aria-label="Previous page: UML中类的关系">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="realize.html" class="navigation navigation-next " aria-label="Next page: 实现">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"继承","level":"1.2.1","depth":2,"next":{"title":"实现","level":"1.2.2","depth":2,"path":"uml/realize.md","ref":"uml/realize.md","articles":[]},"previous":{"title":"UML中类的关系","level":"1.2","depth":1,"path":"uml/introduct.md","ref":"uml/introduct.md","articles":[{"title":"继承","level":"1.2.1","depth":2,"path":"uml/inherit.md","ref":"uml/inherit.md","articles":[]},{"title":"实现","level":"1.2.2","depth":2,"path":"uml/realize.md","ref":"uml/realize.md","articles":[]},{"title":"聚合关系","level":"1.2.3","depth":2,"path":"uml/aggregation.md","ref":"uml/aggregation.md","articles":[]},{"title":"组合关系","level":"1.2.4","depth":2,"path":"uml/composition.md","ref":"uml/composition.md","articles":[]},{"title":"关联关系","level":"1.2.5","depth":2,"path":"uml/association.md","ref":"uml/association.md","articles":[]},{"title":"依赖关系","level":"1.2.6","depth":2,"path":"uml/dependency.md","ref":"uml/dependency.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh","gitbook":"*"},"file":{"path":"uml/inherit.md","mtime":"2016-12-03T13:08:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-27T05:32:39.619Z"},"basePath":"..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

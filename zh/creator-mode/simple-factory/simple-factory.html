@@ -1,0 +1,551 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>简单工厂模式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../factory-method/factory-method.html" />
+    
+    
+    <link rel="prev" href="../creator-mode.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../uml/introduct.html">
+            
+                <a href="../../uml/introduct.html">
+            
+                    
+                    UML中类的关系
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../uml/inherit.html">
+            
+                <a href="../../uml/inherit.html">
+            
+                    
+                    继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../uml/realize.html">
+            
+                <a href="../../uml/realize.html">
+            
+                    
+                    实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../uml/aggregation.html">
+            
+                <a href="../../uml/aggregation.html">
+            
+                    
+                    聚合关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../uml/composition.html">
+            
+                <a href="../../uml/composition.html">
+            
+                    
+                    组合关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../uml/association.html">
+            
+                <a href="../../uml/association.html">
+            
+                    
+                    关联关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../uml/dependency.html">
+            
+                <a href="../../uml/dependency.html">
+            
+                    
+                    依赖关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../uml/design-principle.html">
+            
+                <a href="../../uml/design-principle.html">
+            
+                    
+                    设计模式原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../creator-mode.html">
+            
+                <a href="../creator-mode.html">
+            
+                    
+                    创建型模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="simple-factory.html">
+            
+                <a href="simple-factory.html">
+            
+                    
+                    简单工厂模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../factory-method/factory-method.html">
+            
+                <a href="../factory-method/factory-method.html">
+            
+                    
+                    工厂方法模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../abstract-factory/abstract-factory.html">
+            
+                <a href="../abstract-factory/abstract-factory.html">
+            
+                    
+                    抽象工厂模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../factory-diff.html">
+            
+                <a href="../factory-diff.html">
+            
+                    
+                    三种工厂模式比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../builder/builder.html">
+            
+                <a href="../builder/builder.html">
+            
+                    
+                    建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../prototype/prototype.html">
+            
+                <a href="../prototype/prototype.html">
+            
+                    
+                    原型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../singleton/singleton.html">
+            
+                <a href="../singleton/singleton.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../structural-mode/structural.html">
+            
+                <a href="../../structural-mode/structural.html">
+            
+                    
+                    结构型模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../structural-mode/proxy-static/proxy-static.html">
+            
+                <a href="../../structural-mode/proxy-static/proxy-static.html">
+            
+                    
+                    静态代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../structural-mode/proxy-dynamic/proxy-dynamic.html">
+            
+                <a href="../../structural-mode/proxy-dynamic/proxy-dynamic.html">
+            
+                    
+                    动态代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../behavioral-mode/behavioral.html">
+            
+                <a href="../../behavioral-mode/behavioral.html">
+            
+                    
+                    行为型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >简单工厂模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;">&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;</h1>
+<h2 id="&#x5B9A;&#x4E49;">&#x5B9A;&#x4E49;</h2>
+<p>&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;(Simple Factory Pattern)&#xFF1A;&#x53C8;&#x79F0;&#x4E3A;&#x9759;&#x6001;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;(Static Factory Method)&#x6A21;&#x5F0F;&#xFF0C;&#x5B83;&#x5C5E;&#x4E8E;&#x7C7B;&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;&#x3002;&#x5728;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x53C2;&#x6570;&#x7684;&#x4E0D;&#x540C;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x4E13;&#x95E8;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7C7B;&#x6765;&#x8D1F;&#x8D23;&#x521B;&#x5EFA;&#x5176;&#x4ED6;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x88AB;&#x521B;&#x5EFA;&#x7684;&#x5B9E;&#x4F8B;&#x901A;&#x5E38;&#x90FD;&#x5177;&#x6709;&#x5171;&#x540C;&#x7684;&#x7236;&#x7C7B;&#x3002;</p>
+<h2 id="&#x573A;&#x666F;">&#x573A;&#x666F;</h2>
+<p>&#x6211;&#x4EEC;&#x7ECF;&#x5E38;&#x8981;&#x53BB;&#x6C49;&#x5821;&#x5E97;&#x4E70;&#x6C49;&#x5821;&#xFF0C; &#x73B0;&#x5728;&#x90FD;&#x6709;&#x81EA;&#x52A9;&#x70B9;&#x9910;&#xFF0C;&#x5F53;&#x6211;&#x9009;&#x62E9;&#x6C49;&#x5821;&#x7684;&#x65F6;&#x5019;&#xFF0C; &#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E0D;&#x540C;&#x79CD;&#x7C7B;&#x7684;&#x6C49;&#x5821;&#x63D0;&#x4F9B;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#xFF0C; &#x6211;&#x4EEC;&#x9009;&#x62E9;&#x9EA6;&#x8FA3;&#x9E21;&#x817F;&#x5821;&#x65F6;&#xFF0C;&#x786E;&#x8BA4;&#x8BA2;&#x5355;&#x3001;&#x652F;&#x4ED8;&#x8BA2;&#x5355;&#x3001;&#x6253;&#x5370;&#x8BA2;&#x5355;&#x90FD;&#x5C31;&#x53EF;&#x4EE5;&#xFF0C;&#x5728;&#x65C1;&#x8FB9;&#x7B49;&#x5F85;&#x53EB;&#x53F7;&#x53D6;&#x6C49;&#x5821;&#x5C31;&#x884C;&#x4E86;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x81EA;&#x52A9;&#x70B9;&#x9910;&#x673A;&#x770B;&#x4F5C;&#x662F;&#x751F;&#x4EA7;&#x6C49;&#x5821;&#x7684;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#xFF0C;&#x4ED6;&#x8D1F;&#x8D23;&#x7ED9;&#x6211;&#x4EEC;&#x751F;&#x4EA7;&#x6C49;&#x5821;&#x3002;</p>
+<h2 id="&#x7C7B;&#x56FE;">&#x7C7B;&#x56FE;</h2>
+<p><img src="https://rawgit.com/ThinkKeep/design-patterns/master/zh/creator-mode/simple-factory/image/simple-factory.svg" alt=""></p>
+<h2 id="&#x5173;&#x952E;&#x4EE3;&#x7801;">&#x5173;&#x952E;&#x4EE3;&#x7801;</h2>
+<pre><code class="lang-java"><span class="hljs-function">Hamburg <span class="hljs-title">createHamburg</span><span class="hljs-params">(String str)</span> </span>{
+    Hamburg hamburg;
+    <span class="hljs-keyword">if</span>(<span class="hljs-string">&quot;A&quot;</span>.eques(str)) {
+        hamburg = <span class="hljs-keyword">new</span> HamburgA();
+    } <span class="hljs-keyword">else</span> {
+        hamburg = <span class="hljs-keyword">new</span> HamburgB();
+    }
+
+    <span class="hljs-keyword">return</span> hamburg;
+}
+</code></pre>
+<h2 id="&#x7279;&#x70B9;">&#x7279;&#x70B9;</h2>
+<ul>
+<li>&#x5C06;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#x5206;&#x79BB;&#x53EF;&#x4EE5;&#x964D;&#x4F4E;&#x7CFB;&#x7EDF;&#x7684;&#x8026;&#x5408;&#x5EA6;&#xFF0C;&#x4F7F;&#x5F97;&#x4E24;&#x8005;&#x4FEE;&#x6539;&#x8D77;&#x6765;&#x90FD;&#x76F8;&#x5BF9;&#x5BB9;&#x6613;&#x3002;</li>
+<li>&#x5728;&#x8C03;&#x7528;&#x5DE5;&#x5382;&#x7C7B;&#x7684;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x7531;&#x4E8E;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x662F;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x7528;&#x8D77;&#x6765;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x7C7B;&#x540D;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#xFF0C;&#x800C;&#x4E14;&#x53EA;&#x9700;&#x8981;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x53C2;&#x6570;&#x5373;&#x53EF;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x8C03;&#x7528;&#x65F6;&#x5C06;&#x6240;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x4FDD;&#x5B58;&#x5728;XML&#x7B49;&#x683C;&#x5F0F;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4FEE;&#x6539;&#x53C2;&#x6570;&#x65F6;&#x65E0;&#x987B;&#x4FEE;&#x6539;&#x4EFB;&#x4F55;&#x6E90;&#x4EE3;&#x7801;&#x3002;</li>
+<li>&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x6700;&#x5927;&#x7684;&#x95EE;&#x9898;&#x5728;&#x4E8E;&#x5DE5;&#x5382;&#x7C7B;&#x7684;&#x804C;&#x8D23;&#x76F8;&#x5BF9;&#x8FC7;&#x91CD;&#xFF0C;&#x589E;&#x52A0;&#x65B0;&#x7684;&#x4EA7;&#x54C1;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x5DE5;&#x5382;&#x7C7B;&#x7684;&#x5224;&#x65AD;&#x903B;&#x8F91;&#xFF0C;&#x8FD9;&#x4E00;&#x70B9;&#x4E0E;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x662F;&#x76F8;&#x8FDD;&#x80CC;&#x7684;&#x3002;</li>
+<li>&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x8981;&#x70B9;&#x5728;&#x4E8E;&#xFF1A;&#x5F53;&#x4F60;&#x9700;&#x8981;&#x4EC0;&#x4E48;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x6B63;&#x786E;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x4F60;&#x6240;&#x9700;&#x8981;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x65E0;&#x987B;&#x77E5;&#x9053;&#x5176;&#x521B;&#x5EFA;&#x7EC6;&#x8282;&#x3002;</li>
+</ul>
+<h2 id="&#x7F3A;&#x70B9;">&#x7F3A;&#x70B9;</h2>
+<ul>
+<li>&#x7531;&#x4E8E;&#x5DE5;&#x5382;&#x7C7B;&#x96C6;&#x4E2D;&#x4E86;&#x6240;&#x6709;&#x4EA7;&#x54C1;&#x521B;&#x5EFA;&#x903B;&#x8F91;&#xFF0C;&#x4E00;&#x65E6;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x90FD;&#x8981;&#x53D7;&#x5230;&#x5F71;&#x54CD;&#x3002;</li>
+<li>&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5C06;&#x4F1A;&#x589E;&#x52A0;&#x7CFB;&#x7EDF;&#x4E2D;&#x7C7B;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x5728;&#x4E00;&#x5B9A;&#x7A0B;&#x5E8F;&#x4E0A;&#x589E;&#x52A0;&#x4E86;&#x7CFB;&#x7EDF;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x548C;&#x7406;&#x89E3;&#x96BE;&#x5EA6;&#x3002;</li>
+<li>&#x7CFB;&#x7EDF;&#x6269;&#x5C55;&#x56F0;&#x96BE;&#xFF0C;&#x4E00;&#x65E6;&#x6DFB;&#x52A0;&#x65B0;&#x4EA7;&#x54C1;&#x5C31;&#x4E0D;&#x5F97;&#x4E0D;&#x4FEE;&#x6539;&#x5DE5;&#x5382;&#x903B;&#x8F91;&#xFF0C;&#x5728;&#x4EA7;&#x54C1;&#x7C7B;&#x578B;&#x8F83;&#x591A;&#x65F6;&#xFF0C;&#x6709;&#x53EF;&#x80FD;&#x9020;&#x6210;&#x5DE5;&#x5382;&#x903B;&#x8F91;&#x8FC7;&#x4E8E;&#x590D;&#x6742;&#xFF0C;&#x4E0D;&#x5229;&#x4E8E;&#x7CFB;&#x7EDF;&#x7684;&#x6269;&#x5C55;&#x548C;&#x7EF4;&#x62A4;&#x3002;&#x5C31;&#x50CF;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#x5982;&#x679C;&#x6C49;&#x5821;&#x79CD;&#x7C7B;&#x7279;&#x522B;&#x591A;&#xFF0C;&#x5C31;&#x4E0D;&#x5229;&#x4E8E;&#x7EF4;&#x62A4;&#x4E86;&#x3002;</li>
+<li>&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7531;&#x4E8E;&#x4F7F;&#x7528;&#x4E86;&#x9759;&#x6001;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#xFF0C;&#x9020;&#x6210;&#x5DE5;&#x5382;&#x89D2;&#x8272;&#x65E0;&#x6CD5;&#x5F62;&#x6210;&#x57FA;&#x4E8E;&#x7EE7;&#x627F;&#x7684;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#x3002;</li>
+</ul>
+<h2 id="&#x9002;&#x7528;&#x573A;&#x666F;">&#x9002;&#x7528;&#x573A;&#x666F;</h2>
+<ul>
+<li>&#x5DE5;&#x5382;&#x7C7B;&#x8D1F;&#x8D23;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x6BD4;&#x8F83;&#x5C11;&#xFF1A;&#x7531;&#x4E8E;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x8F83;&#x5C11;&#xFF0C;&#x4E0D;&#x4F1A;&#x9020;&#x6210;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x592A;&#x8FC7;&#x590D;&#x6742;&#x3002;</li>
+<li>&#x5BA2;&#x6237;&#x7AEF;&#x53EA;&#x77E5;&#x9053;&#x4F20;&#x5165;&#x5DE5;&#x5382;&#x7C7B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5BF9;&#x4E8E;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x4E0D;&#x5173;&#x5FC3;&#xFF1A;&#x5BA2;&#x6237;&#x7AEF;&#x65E2;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x5FC3;&#x521B;&#x5EFA;&#x7EC6;&#x8282;&#xFF0C;&#x751A;&#x81F3;&#x8FDE;&#x7C7B;&#x540D;&#x90FD;&#x4E0D;&#x9700;&#x8981;&#x8BB0;&#x4F4F;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x77E5;&#x9053;&#x7C7B;&#x578B;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x53C2;&#x6570;&#x3002;</li>
+</ul>
+<h2 id="android-&#x6E90;&#x7801;&#x4E2D;&#x5E94;&#x7528;">Android &#x6E90;&#x7801;&#x4E2D;&#x5E94;&#x7528;</h2>
+<p>&#x5728;Android&#x4E2D;&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x7684;&#x4F7F;&#x7528;&#x5230;&#x4E86;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x7684;&#x5730;&#x65B9;&#x6709;Bitmap&#x5BF9;&#x8C61;&#x7684;&#x83B7;&#x53D6;&#x3001;Fragment&#x521B;&#x5EFA;&#x7B49;&#x3002;
+&#x9996;&#x5148;&#x6765;&#x8BF4;&#x6211;&#x4EEC;&#x662F;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;new&#x65B9;&#x6CD5;&#x6765;&#x521B;&#x5EFA;Bitmap&#x5BF9;&#x8C61;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x4ECE;&#x6E90;&#x7801;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x5230;Bitmap&#x7684;&#x7C7B;&#x540D;&#x662F;&#x901A;&#x8FC7;final&#x6765;&#x4FEE;&#x9970;&#x7684;&#x3002;</p>
+<pre><code class="lang-java">Bitmap bmp = BitmapFactory.decodeFile(String pathName);
+</code></pre>
+<p>&#x6709;&#x5174;&#x8DA3;&#x7684;&#x53EF;&#x4EE5;&#x770B;&#x4E00;&#x4E0B;&#x6E90;&#x7801;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../creator-mode.html" class="navigation navigation-prev " aria-label="Previous page: 创建型模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../factory-method/factory-method.html" class="navigation navigation-next " aria-label="Next page: 工厂方法模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"简单工厂模式","level":"1.4.1","depth":2,"next":{"title":"工厂方法模式","level":"1.4.2","depth":2,"path":"creator-mode/factory-method/factory-method.md","ref":"creator-mode/factory-method/factory-method.md","articles":[]},"previous":{"title":"创建型模式","level":"1.4","depth":1,"path":"creator-mode/creator-mode.md","ref":"creator-mode/creator-mode.md","articles":[{"title":"简单工厂模式","level":"1.4.1","depth":2,"path":"creator-mode/simple-factory/simple-factory.md","ref":"creator-mode/simple-factory/simple-factory.md","articles":[]},{"title":"工厂方法模式","level":"1.4.2","depth":2,"path":"creator-mode/factory-method/factory-method.md","ref":"creator-mode/factory-method/factory-method.md","articles":[]},{"title":"抽象工厂模式","level":"1.4.3","depth":2,"path":"creator-mode/abstract-factory/abstract-factory.md","ref":"creator-mode/abstract-factory/abstract-factory.md","articles":[]},{"title":"三种工厂模式比较","level":"1.4.4","depth":2,"path":"creator-mode/factory-diff.md","ref":"creator-mode/factory-diff.md","articles":[]},{"title":"建造者模式","level":"1.4.5","depth":2,"path":"creator-mode/builder/builder.md","ref":"creator-mode/builder/builder.md","articles":[]},{"title":"原型模式","level":"1.4.6","depth":2,"path":"creator-mode/prototype/prototype.md","ref":"creator-mode/prototype/prototype.md","articles":[]},{"title":"单例模式","level":"1.4.7","depth":2,"path":"creator-mode/singleton/singleton.md","ref":"creator-mode/singleton/singleton.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh","gitbook":"*"},"file":{"path":"creator-mode/simple-factory/simple-factory.md","mtime":"2016-12-03T13:08:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-27T05:32:39.619Z"},"basePath":"../..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

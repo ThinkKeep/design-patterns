@@ -1,0 +1,612 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>抽象工厂模式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../factory-diff.html" />
+    
+    
+    <link rel="prev" href="../factory-method/factory-method.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../uml/introduct.html">
+            
+                <a href="../../uml/introduct.html">
+            
+                    
+                    UML中类的关系
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../uml/inherit.html">
+            
+                <a href="../../uml/inherit.html">
+            
+                    
+                    继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../uml/realize.html">
+            
+                <a href="../../uml/realize.html">
+            
+                    
+                    实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../uml/aggregation.html">
+            
+                <a href="../../uml/aggregation.html">
+            
+                    
+                    聚合关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../uml/composition.html">
+            
+                <a href="../../uml/composition.html">
+            
+                    
+                    组合关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../uml/association.html">
+            
+                <a href="../../uml/association.html">
+            
+                    
+                    关联关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../uml/dependency.html">
+            
+                <a href="../../uml/dependency.html">
+            
+                    
+                    依赖关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../uml/design-principle.html">
+            
+                <a href="../../uml/design-principle.html">
+            
+                    
+                    设计模式原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../creator-mode.html">
+            
+                <a href="../creator-mode.html">
+            
+                    
+                    创建型模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../simple-factory/simple-factory.html">
+            
+                <a href="../simple-factory/simple-factory.html">
+            
+                    
+                    简单工厂模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../factory-method/factory-method.html">
+            
+                <a href="../factory-method/factory-method.html">
+            
+                    
+                    工厂方法模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="abstract-factory.html">
+            
+                <a href="abstract-factory.html">
+            
+                    
+                    抽象工厂模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../factory-diff.html">
+            
+                <a href="../factory-diff.html">
+            
+                    
+                    三种工厂模式比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../builder/builder.html">
+            
+                <a href="../builder/builder.html">
+            
+                    
+                    建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../prototype/prototype.html">
+            
+                <a href="../prototype/prototype.html">
+            
+                    
+                    原型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../singleton/singleton.html">
+            
+                <a href="../singleton/singleton.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../structural-mode/structural.html">
+            
+                <a href="../../structural-mode/structural.html">
+            
+                    
+                    结构型模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../structural-mode/proxy-static/proxy-static.html">
+            
+                <a href="../../structural-mode/proxy-static/proxy-static.html">
+            
+                    
+                    静态代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../structural-mode/proxy-dynamic/proxy-dynamic.html">
+            
+                <a href="../../structural-mode/proxy-dynamic/proxy-dynamic.html">
+            
+                    
+                    动态代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../behavioral-mode/behavioral.html">
+            
+                <a href="../../behavioral-mode/behavioral.html">
+            
+                    
+                    行为型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >抽象工厂模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;">&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;</h1>
+<p>&#x5728;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x4E2D;&#x5177;&#x4F53;&#x5DE5;&#x5382;&#x8D1F;&#x8D23;&#x751F;&#x4EA7;&#x5177;&#x4F53;&#x7684;&#x4EA7;&#x54C1;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x5DE5;&#x5382;&#x5BF9;&#x5E94;&#x4E00;&#x79CD;&#x5177;&#x4F53;&#x4EA7;&#x54C1;&#xFF0C;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x4E5F;&#x5177;&#x6709;&#x552F;&#x4E00;&#x6027;&#xFF0C;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x5DE5;&#x5382;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6216;&#x8005;&#x4E00;&#x7EC4;&#x91CD;&#x8F7D;&#x7684;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x591A;&#x4E2A;&#x4EA7;&#x54C1;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5355;&#x4E00;&#x7684;&#x4EA7;&#x54C1;&#x5BF9;&#x8C61;&#xFF0C;&#x5373;&#x4EA7;&#x54C1;&#x65CF;&#x3002;&#x5982;&#x5728;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x4E2D; HTTPFactory &#x53EA;&#x8D1F;&#x8D23;&#x751F;&#x4EA7; HTTPProtocol &#x7B49;&#x3002;&#x663E;&#x7136;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x6211;&#x4EEC;&#x7684;&#x9700;&#x6C42;&#x4E86;&#xFF0C; &#x600E;&#x4E48;&#x529E;&#xFF1F; &#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7ED9;&#x6211;&#x4EEC;&#x89E3;&#x51B3;&#x4E86;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x8BA9;&#x4F60;&#x80FD;&#x591F;&#x66F4;&#x597D;&#x7684;&#x7406;&#x89E3;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF0C; &#x6211;&#x4EEC;&#x5148;&#x4E86;&#x89E3;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x6982;&#x7387;&#xFF1A;</p>
+<ul>
+<li><strong>&#x4EA7;&#x54C1;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;</strong> &#xFF1A;&#x4EA7;&#x54C1;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#x5373;&#x4EA7;&#x54C1;&#x7684;&#x7EE7;&#x627F;&#x7ED3;&#x6784;&#xFF0C;&#x5982;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7C7B;&#x662F; Protocol&#xFF0C;&#x5176;&#x5B50;&#x7C7B;&#x6709; HTTPProtocol&#x3001;TCPProtocol&#x3001;UDPProtocol&#xFF0C;&#x5219;&#x62BD;&#x8C61; Protocol&#x4E0E;&#x5177;&#x4F53;&#x534F;&#x8BAE;&#x4E4B;&#x95F4;&#x6784;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#xFF0C;&#x62BD;&#x8C61;Protocol&#x662F;&#x7236;&#x7C7B;&#xFF0C;&#x800C;&#x5177;&#x4F53;&#x534F;&#x8BAE;&#x7684; Procotol &#x662F;&#x5176;&#x5B50;&#x7C7B;&#x3002;</li>
+<li><strong>&#x4EA7;&#x54C1;&#x65CF;</strong>&#xFF1A;&#x5728;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x4EA7;&#x54C1;&#x65CF;&#x662F;&#x6307;&#x7531;&#x540C;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x751F;&#x4EA7;&#x7684;&#xFF0C;&#x4F4D;&#x4E8E;&#x4E0D;&#x540C;&#x4EA7;&#x54C1;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#x4E2D;&#x7684;&#x4E00;&#x7EC4;&#x4EA7;&#x54C1;&#xFF0C;&#x5982;&#x4E2D;&#x56FD;&#x9EA6;&#x5F53;&#x52B3;&#x5E97;&#x751F;&#x4EA7;&#x7684;&#x5DE8;&#x65E0;&#x9738;&#x3001;&#x53EF;&#x4E50;&#xFF0C; &#x5DE8;&#x65E0;&#x9738;&#x4F4D;&#x4E8E;&#x6C49;&#x5821;&#x4EA7;&#x54C1;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#x4E2D;&#xFF0C;&#x53EF;&#x4E50;&#x4F4D;&#x4E8E;&#x996E;&#x6599;&#x4EA7;&#x54C1;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#x4E2D;&#x3002;</li>
+</ul>
+<h2 id="&#x5B9A;&#x4E49;">&#x5B9A;&#x4E49;</h2>
+<blockquote>
+<p>Provide an interface for creating families of related or dependent objects without specifying their concrete classes&#x3002;&#x4E3A;&#x521B;&#x5EFA;&#x4E00;&#x7EC4;&#x76F8;&#x5173;&#x6216;&#x76F8;&#x4E92;&#x4F9D;&#x8D56;&#x7684;&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x800C;&#x4E14;&#x65E0;&#x9700;&#x6307;&#x5B9A;&#x5B83;&#x4EEC;&#x7684;&#x5177;&#x4F53;&#x7C7B;&#x3002;</p>
+</blockquote>
+<h2 id="&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</h2>
+<p>&#x5927;&#x5BB6;&#x90FD;&#x53BB;&#x9EA6;&#x5F53;&#x52B3;&#x5403;&#x8FC7;&#x6C49;&#x5821;&#x5427;&#xFF0C; &#x8FD8;&#x6709;&#x4E2D;&#x56FD;&#x7684;&#x9EA6;&#x5F53;&#x52B3;&#x4EA7;&#x54C1;&#x548C;&#x56FD;&#x5916;&#x7684;&#x9EA6;&#x5F53;&#x52B3;&#xFF0C;&#x4E0D;&#x4E00;&#x6837;&#x5427;&#xFF0C; &#x81F3;&#x5C11;&#x539F;&#x6599;&#x4E0D;&#x4E00;&#x6837;&#x5427;&#xFF0C; &#x9E21;&#x8089;&#x90FD;&#x662F;&#x672C;&#x5730;&#x4EA7;&#x7684;&#x5427;&#xFF0C;&#x8FD8;&#x6709;&#x6C49;&#x5821;&#x7684;&#x5927;&#x5C0F;&#x4E0D;&#x4E00;&#x6837;&#x5427;&#x3002;&#x5957;&#x9910;&#x7684;&#x54C1;&#x79CD;&#x4E5F;&#x4E0D;&#x6837;&#x5427;&#xFF0C; &#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C31;&#x7528;&#x9EA6;&#x5F53;&#x52B3;&#x4E3E;&#x4F8B;&#x5427;&#x3002;</p>
+<p><strong>&#x7C7B;&#x56FE;</strong>&#xFF1A;</p>
+<p><img src="https://rawgit.com/jasonim/design-patterns/develop/zh/creator-mode/abstract-factory/image/abstract-factory.svg" alt=""></p>
+<p><strong>&#x4EE3;&#x7801;</strong>&#xFF1A;</p>
+<p><strong>AbsFactory</strong></p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">AbsFactory</span> </span>{
+    <span class="hljs-function">Hamburg <span class="hljs-title">createhamburg</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function">Drink <span class="hljs-title">createDrink</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-comment">//&#x5957;&#x9910;....</span>
+}
+</code></pre>
+<p><strong>Store</strong></p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Store</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        AbsFactory factory = <span class="hljs-keyword">new</span> ChineseFactory();
+        factory.createDrink();
+        factory.createhamburg();
+
+        factory = <span class="hljs-keyword">new</span> NYFactory();
+        factory.createDrink();
+        factory.createhamburg();
+    }
+}
+</code></pre>
+<p><strong>&#x8FD0;&#x884C;&#x7ED3;&#x679C;</strong>&#xFF1A;</p>
+<p><img src="https://rawgit.com/jasonim/design-patterns/develop/zh/creator-mode/abstract-factory/image/run.png" alt=""></p>
+<p><strong>&#x4F18;&#x70B9;</strong>&#xFF1A;</p>
+<ul>
+<li>&#x5C01;&#x88C5;&#x6027;&#xFF0C;&#x6BCF;&#x4E2A;&#x4EA7;&#x54C1;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x4E0D;&#x662F;&#x9AD8;&#x5C42;&#x6A21;&#x5757;&#x8981;&#x5173;&#x7CFB;&#x7684;&#xFF0C;&#x8981;&#x5173;&#x5FC3;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x662F;&#x63A5;&#x53E3;&#xFF0C;&#x662F;&#x62BD;&#x8C61;&#xFF0C;&#x5B83;&#x4E0D;&#x5173;&#x5FC3;&#x5BF9;&#x8C61;&#x662F;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#xFF0C;&#x8FD9;&#x7531;&#x8C01;&#x8D1F;&#x8D23;&#x5462;&#xFF1F;&#x5DE5;&#x5382;&#x7C7B;&#x3002;</li>
+<li>&#x589E;&#x52A0;&#x65B0;&#x7684;&#x5177;&#x4F53;&#x5DE5;&#x5382;&#x548C;&#x4EA7;&#x54C1;&#x65CF;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x65E0;&#x987B;&#x4FEE;&#x6539;&#x5DF2;&#x6709;&#x7CFB;&#x7EDF;&#xFF0C;&#x7B26;&#x5408;&#x201C;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x201D;&#x3002;</li>
+<li>&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x9694;&#x79BB;&#x4E86;&#x5177;&#x4F53;&#x7C7B;&#x7684;&#x751F;&#x6210;&#xFF0C;&#x4F7F;&#x5F97;&#x5BA2;&#x6237;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x77E5;&#x9053;&#x4EC0;&#x4E48;&#x88AB;&#x521B;&#x5EFA;&#x3002;&#x7531;&#x4E8E;&#x8FD9;&#x79CD;&#x9694;&#x79BB;&#xFF0C;&#x66F4;&#x6362;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x5DE5;&#x5382;&#x5C31;&#x53D8;&#x5F97;&#x76F8;&#x5BF9;&#x5BB9;&#x6613;&#x3002;&#x6240;&#x6709;&#x7684;&#x5177;&#x4F53;&#x5DE5;&#x5382;&#x90FD;&#x5B9E;&#x73B0;&#x4E86;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x90A3;&#x4E9B;&#x516C;&#x5171;&#x63A5;&#x53E3;&#xFF0C;&#x56E0;&#x6B64;&#x53EA;&#x9700;&#x6539;&#x53D8;&#x5177;&#x4F53;&#x5DE5;&#x5382;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x67D0;&#x79CD;&#x7A0B;&#x5EA6;&#x4E0A;&#x6539;&#x53D8;&#x6574;&#x4E2A;&#x8F6F;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x884C;&#x4E3A;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5E94;&#x7528;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x9AD8;&#x5185;&#x805A;&#x4F4E;&#x8026;&#x5408;&#x7684;&#x8BBE;&#x8BA1;&#x76EE;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5F97;&#x5230;&#x4E86;&#x5E7F;&#x6CDB;&#x7684;&#x5E94;&#x7528;&#x3002;</li>
+</ul>
+<p><strong>&#x7F3A;&#x70B9;</strong>&#xFF1A;</p>
+<ul>
+<li>&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x6700;&#x5927;&#x7F3A;&#x70B9;&#x5C31;&#x662F;&#x4EA7;&#x54C1;&#x65CF;&#x6269;&#x5C55;&#x975E;&#x5E38;&#x56F0;&#x96BE;&#xFF0C;&#x5982;&#x5B9E;&#x4F8B;&#x4E2D;&#x5982;&#x679C;&#x518D;&#x6DFB;&#x52A0;&#x65B0;&#x4EA7;&#x54C1;&#xFF0C; &#x5C31;&#x9700;&#x8981;&#x5728;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x7C7B;&#x6DFB;&#x52A0;&#x5BF9;&#x5E94;&#x7684;&#x4EA7;&#x54C1;&#xFF0C;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x7684;&#x503E;&#x659C;&#x6027;&#x3002;</li>
+</ul>
+<h2 id="&#x4F7F;&#x7528;&#x573A;&#x666F;">&#x4F7F;&#x7528;&#x573A;&#x666F;</h2>
+<ul>
+<li>&#x5F53;&#x7CFB;&#x7EDF;&#x6240;&#x63D0;&#x4F9B;&#x7684;&#x5DE5;&#x5382;&#x6240;&#x9700;&#x751F;&#x4EA7;&#x7684;&#x5177;&#x4F53;&#x4EA7;&#x54C1;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x662F;&#x591A;&#x4E2A;&#x4F4D;&#x4E8E;&#x4E0D;&#x540C;&#x4EA7;&#x54C1;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#x4E2D;&#x5C5E;&#x4E8E;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x5177;&#x4F53;&#x4EA7;&#x54C1;&#x65F6;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x3002;</li>
+<li>&#x7CFB;&#x7EDF;&#x4E2D;&#x6709;&#x591A;&#x4E8E;&#x4E00;&#x4E2A;&#x7684;&#x4EA7;&#x54C1;&#x65CF;&#xFF0C;&#x800C;&#x6BCF;&#x6B21;&#x53EA;&#x4F7F;&#x7528;&#x5176;&#x4E2D;&#x67D0;&#x4E00;&#x4EA7;&#x54C1;&#x65CF;&#x3002;</li>
+<li>&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;&#x7C7B;&#x7684;&#x5E93;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x4EA7;&#x54C1;&#x4EE5;&#x540C;&#x6837;&#x7684;&#x63A5;&#x53E3;&#x51FA;&#x73B0;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x5BA2;&#x6237;&#x7AEF;&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x3002;</li>
+</ul>
+<p>&#x5982;&#x67D0;&#x4E2A; APP&#x591A;&#x5957;&#x4E3B;&#x9898;&#x65F6;&#xFF0C; &#x9752;&#x6625;&#x7248;&#x3001;&#x8001;&#x4EBA;&#x7248;&#x3001;&#x81EA;&#x604B;&#x529E;&#x7B49;&#xFF0C; &#x53EF;&#x4EE5;&#x8003;&#x8651;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x3002;</p>
+<h2 id="&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x4E0E;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x533A;&#x522B;&#x53CA;&#x8054;&#x7CFB;">&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x4E0E;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x533A;&#x522B;&#x53CA;&#x8054;&#x7CFB;</h2>
+<p>&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x4E0E;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x6700;&#x5927;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x9488;&#x5BF9;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#xFF0C;&#x800C;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5219;&#x9700;&#x8981;&#x9762;&#x5BF9;&#x591A;&#x4E2A;&#x4EA7;&#x54C1;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#xFF0C;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#x53EF;&#x4EE5;&#x8D1F;&#x8D23;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x4EA7;&#x54C1;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#x4E2D;&#x7684;&#x4EA7;&#x54C1;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA; &#x3002;&#x5F53;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x51FA;&#x5206;&#x5C5E;&#x4E8E;&#x4E0D;&#x540C;&#x4EA7;&#x54C1;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#x7684;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;&#x65CF;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x6BD4;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x66F4;&#x4E3A;&#x7B80;&#x5355;&#x3001;&#x6709;&#x6548;&#x7387;&#x3002;</p>
+<p>&#x4ED6;&#x4EEC;&#x81EA;&#x5DF1;&#x6CA1;&#x6709;&#x7EDD;&#x5BF9;&#x754C;&#x9650;&#xFF0C;&#x5F53;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x5DE5;&#x5382;&#x7C7B;&#x53EA;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53EA;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#x65F6;&#xFF0C;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x9000;&#x5316;&#x6210;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#xFF1B;&#x5F53;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x4E2D;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x4E0E;&#x5177;&#x4F53;&#x5DE5;&#x5382;&#x5408;&#x5E76;&#xFF0C;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x7684;&#x5DE5;&#x5382;&#x6765;&#x521B;&#x5EFA;&#x4EA7;&#x54C1;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x5C06;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x8BBE;&#x8BA1;&#x4E3A;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x9000;&#x5316;&#x6210;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x3002;</p>
+<h2 id="android-&#x6E90;&#x7801;&#x4E2D;&#x7684;&#x5E94;&#x7528;">Android &#x6E90;&#x7801;&#x4E2D;&#x7684;&#x5E94;&#x7528;</h2>
+<p>&#x5728;java &#x7684;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x64CD;&#x4F5C;&#x4E2D;&#xFF0C;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7684;&#x64CD;&#x4F5C;&#x800C;&#x5F62;&#x6210;&#x7684;&#x5BF9;&#x8C61;&#x64CD;&#x4F5C;&#x65CF;&#xFF0C;&#x5C31;&#x662F;&#x4E00;&#x79CD;&#x5F88;&#x597D;&#x7684;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x5E94;&#x7528;&#x3002;&#x800C;&#x5728; Android &#x7CFB;&#x7EDF;&#x4E2D; WebViewFactoryProvider/WebViewChromiumFactoryProvider &#x4E5F;&#x5E94;&#x7528;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x3002;</p>
+<p><strong>WebViewFactoryProvider</strong></p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">WebViewFactoryProvider</span> </span>{
+    ...
+
+    <span class="hljs-function">WebViewProvider <span class="hljs-title">createWebView</span><span class="hljs-params">(WebView webView, WebView.PrivateAccess privateAccess)</span></span>;
+
+    ...
+
+    <span class="hljs-function">CookieManager <span class="hljs-title">getCookieManager</span><span class="hljs-params">()</span></span>;
+
+}
+</code></pre>
+<p><strong>WebViewChromiumFactoryProvider</strong></p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WebViewChromiumFactoryProvider</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">WebViewFactoryProvider</span> </span>{
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> WebViewProvider <span class="hljs-title">createWebView</span><span class="hljs-params">(WebView webView,
+        WebView.PrivateAccess privateAccess)</span> </span>{
+        WebViewChromium wvc = <span class="hljs-keyword">new</span> WebViewChromium(<span class="hljs-keyword">this</span>,
+            webView, privateAccess);
+
+        ...
+
+        <span class="hljs-keyword">return</span> wvc;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> CookieManager <span class="hljs-title">getCookieManager</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">synchronized</span> (mLock) {
+            <span class="hljs-keyword">if</span> (mCookieManager == <span class="hljs-keyword">null</span>) {
+
+                ...
+
+                mCookieManager = <span class="hljs-keyword">new</span> CookieManagerAdapter(<span class="hljs-keyword">new</span> AwCookieManager());
+            }
+        }
+        <span class="hljs-keyword">return</span> mCookieManager;
+    }
+
+    ...
+}
+</code></pre>
+<p>WebViewFactoryProvider &#x662F;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x63A5;&#x53E3;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86; WebView &#x53CA;&#x5468;&#x8FB9;&#x529F;&#x80FD;&#x6240;&#x9700;&#x8981;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x5927;&#x90E8;&#x5206;&#x4E3A;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x4EEC;&#x8FD4;&#x56DE;&#x7684;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x662F;&#x62BD;&#x8C61;&#x7684;&#xFF0C;&#x5C5E;&#x4E8E;&#x9762;&#x5411;&#x63A5;&#x53E3;&#x7684;&#x7F16;&#x7A0B;&#x98CE;&#x683C;&#x3002;&#x62BD;&#x8C61;&#x5DE5;&#x5382; WebViewFactoryProvider &#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x6709;&#xFF1A;
+&#x5B9E;&#x73B0;Webview&#x6838;&#x5FC3;&#x529F;&#x80FD;&#x7684; WebViewProvider &#xFF0C;&#x7BA1;&#x7406; Cookie &#x7684; CookieManager&#xFF0C;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x76F8;&#x5173;&#x7684; GeolocationPermissions &#x548C;&#x5B58;&#x50A8; Web &#x8868;&#x5355;&#x6570;&#x636E;&#x7684;WebviewDatabase &#x7B49;&#x7B49;&#x3002;</p>
+<p>WebViewChromiumFactoryProvider &#x662F;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x8005;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x300C;Chromium&#x300D;&#x4E3B;&#x9898;&#x7684;&#x4EA7;&#x54C1;&#x65CF;&#xFF0C;&#x4E5F;&#x662F;&#x76EE;&#x524D;&#x6700;&#x65B0;&#x7248;&#x672C; Webview &#x6B63;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x4EA7;&#x54C1;&#x65CF;&#x3002;&#x5982;&#x679C;&#x5C06;&#x6765;&#x6709;&#x65B0;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x5F15;&#x64CE;&#x5185;&#x6838;&#x51FA;&#x73B0;(&#x4EE5;&#x524D;&#x7528;&#x5F97;&#x662F; Apple Webkit &#x5185;&#x6838;&#xFF0C; &#x542C;&#x8BF4; google &#x641E;&#x4E86;&#x4E00;&#x5957;&#x81EA;&#x5DF1;&#x7684;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x73B0;&#x5728;&#x52A0;&#x8FDB;&#x53BB;&#x6CA1;)&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x9700;&#x6309;&#x7167; WebViewFactoryProvider &#x63A5;&#x53E3;&#x521B;&#x5EFA;&#x8BE5;&#x4E3B;&#x9898;&#x4E0B;&#x4EA7;&#x54C1;&#xFF0C;&#x7136;&#x540E;&#x66FF;&#x6362;&#x73B0;&#x6709;&#x7684;&#x300C;Chromium&#x300D;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x6362;&#x4EE3;&#xFF0C;&#x4E0D;&#x7528;&#x6539;&#x52A8;&#x5176;&#x4ED6;&#x5730;&#x65B9;&#x4EFB;&#x4F55;&#x4EE3;&#x7801;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../factory-method/factory-method.html" class="navigation navigation-prev " aria-label="Previous page: 工厂方法模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../factory-diff.html" class="navigation navigation-next " aria-label="Next page: 三种工厂模式比较">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"抽象工厂模式","level":"1.4.3","depth":2,"next":{"title":"三种工厂模式比较","level":"1.4.4","depth":2,"path":"creator-mode/factory-diff.md","ref":"creator-mode/factory-diff.md","articles":[]},"previous":{"title":"工厂方法模式","level":"1.4.2","depth":2,"path":"creator-mode/factory-method/factory-method.md","ref":"creator-mode/factory-method/factory-method.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh","gitbook":"*"},"file":{"path":"creator-mode/abstract-factory/abstract-factory.md","mtime":"2016-12-12T02:16:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-27T05:32:39.619Z"},"basePath":"../..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
